@@ -4,4 +4,4 @@ En enkel webapp för att visuellt visa upp lunchrestauranger nära Malmö Högsk
 
 ## Kom igång
 
-Klone ner repot till valfri mapp - och kör sedan filen `index.html` i valfri webbläsare.
+Klona ner repot till valfri mapp - och kör sedan filen `index.html` i valfri webbläsare.
