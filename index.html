@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>MAH - Lunch Niagara</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+<div class="navbar-fixed">
+  <nav class="teal darken-4" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="index.html" class="brand-logo">NiagaraLunch</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#day-page">Dagens lunch</a></li>
+		<li><a href="#week-page">Veckans lunch</a></li>
+		<li><a href="#setting-page">Inställningar</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#day-page">Dagens lunch</a></li>
+		<li><a href="#week-page">Veckans lunch</a></li>
+		<li><a href="#setting-page">Inställningar</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  </div>
+  
+    <div id="setting-page" style="display:none" class="page container">
+		<h1 class="center orange-text" style="font-size: 2.5em; margin-bottom:0px;">Inställningar</h1>
+		  <p style="margin:10px 5%;">Från vilka restauranger vill du visa menyn?</p>
+		  <hr>
+		  <form action="#" style="margin:auto; width: 90%; text-align:center;" class="center" id="view-settings">
+			<p>
+			  <input type="checkbox" id="Restaurang-Niagara" />
+			  <label for="Restaurang-Niagara" style="display:block">Restaurang Niagara</label>
+			</p>
+			<p>
+			  <input type="checkbox" id="Mia-Maria" />
+			  <label for="Mia-Maria" style="display:block">Mia Maria</label>
+			</p>
+			<p>
+			  <input type="checkbox" id="La-Bonne-Vie" />
+			  <label for="La-Bonne-Vie" style="display:block">La Bonne Vie</label>
+			</p>
+			<p>
+			  <input type="checkbox" id="Välfärden" />
+			  <label for="Välfärden" style="display:block">Välfärden</label>
+			</p>
+			<p>
+			  <input type="checkbox" id="Lilla-Köket" />
+			  <label for="Lilla-Köket" style="display:block">Lilla Köket</label>
+			</p>
+		  </form>
+		  <hr>
+	</div>
+	
+  <div id="day-page" class="page">
+	<h1 class="center orange-text" style="font-size: 2.5em; margin-bottom:0px;">Dagens Lunch</h1>
+	  
+	<div class="preloader-wrapper big active" id="loading">
+      <div class="spinner-layer spinner-blue">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="spinner-layer spinner-red">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="spinner-layer spinner-yellow">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="spinner-layer spinner-green">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+  
+	  <div class="container">
+		<div class="section">
+
+		  <!--   Icon Section   -->
+		  <div class="row" id="lunch-area">
+		   
+		</div>
+	  </div>
+	  
+	  </div>
+  </div>
+  
+  <div id="week-page" style="display:none" class="page">
+	<h1 class="center orange-text" style="font-size: 2.5em; margin-bottom:0px;">Veckans Lunch</h1>
+	  
+	<div class="preloader-wrapper big active" id="loading-week">
+      <div class="spinner-layer spinner-blue">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="spinner-layer spinner-red">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="spinner-layer spinner-yellow">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+
+      <div class="spinner-layer spinner-green">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+  
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row" id="week-lunch-area">
+       
+    </div>
+  </div>
+ </div>
+
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
