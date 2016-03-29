@@ -1,6 +1,6 @@
 (function($){
   $(function(){
-	  
+
 	var days = {};
 	days["Monday"] = "Måndag";
 	days["Tuesday"] = "Tisdag";
@@ -9,9 +9,9 @@
 	days["Friday"] = "Fredag";
 	days["Saturday"] = "Lördag";
 	days["Sunday"] = "Söndag";
-	
+
 	if(localStorage.getItem("restaurants") == undefined){
-		var restaurants = ["Restaurang Niagara", "Mia Maria", "La Bonne Vie", "Välfärden", "Lilla Köket"];
+		var restaurants = ["Restaurang Niagara", "Mia Maria", "La Bonne Vie", "Välfärden", "Lilla Köket", "MH Matsalar"];
 		localStorage.setItem("restaurants", JSON.stringify(restaurants));
 	}else{
 		var restaurants = JSON.parse(localStorage.getItem("restaurants"));
@@ -19,7 +19,7 @@
 
     $('.button-collapse').sideNav();
 	initDay();
-	
+
 	$(".nav-wrapper #nav-mobile a, .nav-wrapper .hide-on-med-and-down a").on("click", function(){
 		$("body > .page").fadeOut(250);
 		$($(this).attr("href")).delay(250).fadeIn(250);
@@ -32,7 +32,7 @@
 		}
 		$('.button-collapse').sideNav('hide');
 	});
-	
+
 	function initSetting(){
 		var restaurants = JSON.parse(localStorage.getItem("restaurants"));
 		for(restaurant in restaurants){
@@ -40,7 +40,7 @@
 			$("#"+str).prop("checked", true);
 		}
 	}
-	
+
 	$("#view-settings input").on("change", function(){
 		var arr = [];
 		$.each($("#view-settings input"), function(){
@@ -52,17 +52,17 @@
 		var restaurants = arr;
 		localStorage.setItem("restaurants", JSON.stringify(arr));
 	});
-	
+
 	function initDay(){
 		var restaurants = JSON.parse(localStorage.getItem("restaurants"));
-		var utc = new Date().toJSON().slice(0,10);
-		if(localStorage.getItem("todaysLunchDate") == undefined || localStorage.getItem("todaysLunchDate") != utc){	
+		var utc = new Date().toJSON().slice(0,16);
+		if(localStorage.getItem("todaysLunchDate") == undefined || localStorage.getItem("todaysLunchDate") != utc){
 			$.ajax({
 				url: "http://mahlunch.antontibblin.se/today",
 				dataType: "JSON"
 			}).done(function(data){
 				localStorage.setItem("todaysLunch", JSON.stringify(data));
-				var utc = new Date().toJSON().slice(0,10);
+				var utc = new Date().toJSON().slice(0,16);
 				localStorage.setItem("todaysLunchDate", utc);
 				$("#loading").fadeOut(450);
 				$("#lunch-area").html("");
@@ -78,7 +78,7 @@
 				$("#lunch-area").hide().append(createDailyMenu(restaurant, data[restaurant])).delay(250).fadeIn(500);
 			}
 		}
-		
+
 		function createDailyMenu(restaurant, menuJson){
 		  var menu = "";
 		  if(restaurants.indexOf(restaurant) != -1){
@@ -99,18 +99,18 @@
 		  return menu;
 		}
 	}
-	
+
   function initWeek(){
 	  var restaurants = JSON.parse(localStorage.getItem("restaurants"));
-	  var utc = new Date().toJSON().slice(0,10);
-		if(localStorage.getItem("weeksLunchDate") == undefined || localStorage.getItem("weeksLunchDate") != utc){	
+	  var utc = new Date().toJSON().slice(0,16);
+		if(localStorage.getItem("weeksLunchDate") == undefined || localStorage.getItem("weeksLunchDate") != utc){
 			$.ajax({
 				url: "http://mahlunch.antontibblin.se/",
 				dataType: "JSON"
 			}).done(function(data){
 				$("#week-lunch-area").html("");
 				localStorage.setItem("weeksLunch", JSON.stringify(data));
-				var utc = new Date().toJSON().slice(0,10);
+				var utc = new Date().toJSON().slice(0,16);
 				localStorage.setItem("weeksLunchDate", utc);
 				$("#loading-week").fadeOut(450);
 				for(var restaurant in data){
@@ -125,7 +125,7 @@
 				$("#week-lunch-area").hide().append(createWeekMenu(restaurant, data[restaurant])).delay(250).fadeIn(500);
 			}
 		}
-		
+
 		function createWeekMenu(restaurant, menuJson){
 		  var menu = "";
 		  if(restaurants.indexOf(restaurant) != -1){
